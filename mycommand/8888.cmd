@@ -1,0 +1,1 @@
+netsh interface ip set dns name="Local Area Connection" source=static addr=8.8.8.8

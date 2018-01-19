@@ -1,0 +1,1 @@
+D:\tibco\ems\7.0\bin\tibemsd.exe -config "C:/ProgramData/TIBCO_HOME/tibco/cfgmgmt/ems/data/tibemsd.conf"

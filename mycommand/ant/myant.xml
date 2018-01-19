@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="my own targets" default="say-hello">
+	<target name="say-hello">
+		<echo>target.dir is the parent folder name</echo>
+		<echo>dir is the folder name you want to delete</echo>
+	</target>
+	
+	<target name="deleteAll">
+			<echo>Parent directory: ${target.dir}</echo>
+			<echo>Delete: **/${dir}/**,**/${dir}</echo>
+		<delete includeemptydirs="true">
+			<fileset dir="${target.dir}"
+				includes="**/${dir}/**,**/${dir}"
+				defaultexcludes="false"
+			/>
+		</delete>
+	</target>
+	
+	<target name="delete">
+			<echo>Parent directory: ${target.dir}</echo>
+			<echo>Delete: ${dir}</echo>
+		<delete includeemptydirs="true">
+			<fileset dir="${target.dir}"
+				includes="${dir}/**,${dir}"
+				defaultexcludes="false"
+			/>
+		</delete>
+	</target>
+	
+	<target name="hideDir">
+			<echo>Parent directory: ${target.dir}</echo>
+			<echo>Hide:**/${dir}</echo>
+		<attrib hidden="true">
+			<dirset dir="${target.dir}"
+				includes="**/${dir}"
+				defaultexcludes="false"
+			/>
+		</attrib>
+	</target>
+	
+	<target name="hideFile">
+			<echo>Parent directory: ${target.dir}</echo>
+			<echo>Hide:${file}</echo>
+		<attrib hidden="true">
+			<fileset dir="${target.dir}"
+				includes="${file}"
+				defaultexcludes="false"
+			/>
+		</attrib>
+	</target>
+	
+	<target name="showAllDir">
+		<echo>Remove all hidden properties of ${dir}</echo>
+		<attrib hidden="false">
+			<dirset dir="${target.dir}"
+				includes="**/${dir}"
+				defaultexcludes="false"
+			/>
+		</attrib>
+	</target>
+	
+	<target name="showFileOrDir">
+		<echo>Remove hidden properties of ${file}</echo>
+		<attrib hidden="false">
+			<fileset dir="${target.dir}"
+				includes="${file}"
+				defaultexcludes="false"
+			/>
+		</attrib>
+		<attrib hidden="false">
+			<dirset dir="${target.dir}"
+				includes="${file}"
+				defaultexcludes="false"
+			/>
+		</attrib>
+	</target>
+	
+	<target name="replace">
+		<echo>Replace ${source} by ${target} from *.${suffix}</echo>
+		<replace dir="${target.dir}" includes="*.${suffix}">
+		<replacefilter token="${source}" value="${target}" />
+		</replace>
+	</target>
+	
+</project>

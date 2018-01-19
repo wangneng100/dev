@@ -1,0 +1,1 @@
+tbuild -Dofficial-release-build=true -Dautobuild.spin.port=8008

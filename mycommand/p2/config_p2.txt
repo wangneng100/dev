@@ -1,0 +1,2 @@
+eclipse配置文件config.ini中指定外部bundlepool:
+org.eclipse.equinox.p2.reconciler.dropins.directory=C\:/p2

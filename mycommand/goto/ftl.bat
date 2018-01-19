@@ -1,0 +1,1 @@
+goftl&cd samples\scripts&run

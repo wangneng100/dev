@@ -1,0 +1,8 @@
+subclipse
+https://dl.bintray.com/subclipse/releases/subclipse/latest/
+
+fileExploer
+http://www.junginger.biz/eclipse/
+
+findbug
+http://findbugs.cs.umd.edu/eclipse/

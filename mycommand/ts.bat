@@ -1,0 +1,1 @@
+tibcohost.exe stop -wait true

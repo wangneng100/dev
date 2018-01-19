@@ -1,0 +1,13 @@
+echo(message : 'running build.gant')
+
+target(init : 'init target') {
+    echo(message : 'Executing init target')
+}
+
+target(hello : 'say hello target') {
+	init()
+	ant.echo(message:'I\'m ant')
+    echo(message : 'hi')
+}
+
+setDefaultTarget(hello)
