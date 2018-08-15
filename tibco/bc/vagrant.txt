@@ -1,2 +1,4 @@
+To avoid vagrant hang on ssh connection problem, run following command:
 vagrant plugin update vagrant-vbguest
-sudo route -n add -net 10.245.1.0/24 -interface vboxnet0
+sudo route delete 10.245.1.0/24 -interface vboxnet0
+sudo route add 10.245.1.0/24 -interface vboxnet0
