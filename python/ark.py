@@ -2,7 +2,7 @@
 import imaplib, email 
   
 user = 'wangneng100@gmail.com'
-password = 
+password = ''
 imap_url = 'imap.gmail.com'
   
 # Function to get email content part i.e its body part 
@@ -54,7 +54,7 @@ for x in range(len(mylist)):
 
 print 'search ' + str(days) + ' days'
 
-for i in range(first_email_id,latest_email_id):
+for i in range(latest_email_id,first_email_id,-1):
     count = count+1
     if count > days:
         break
