@@ -1,0 +1,5 @@
+mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL']
+
+mylist = ['TDOC','DKNG','JFROG']
+
+mylist = ['TCEHY','BIDU','BABA','JD','BILI']
