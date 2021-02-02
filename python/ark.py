@@ -51,11 +51,15 @@ if days=='':
 else:
     days = int(days)
 
-string_input = raw_input('stock list:(space split)')
+string_input = raw_input('stock list:(1-growing, 2-chinese, or list with space split)')
 if string_input=='':
     mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
-    #mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
-    #mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
+
+elif string_input=="1":
+    mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
+
+elif string_input=="2":
+    mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
 else:
     mylist = string_input.split() #splits the input string on spaces
 
