@@ -1,3 +1,3 @@
 @echo off
-C:
+D:
 cd %~dp0

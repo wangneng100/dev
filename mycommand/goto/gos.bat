@@ -1,2 +1,2 @@
 D:
-cd D:\TIBCO_WORK\Source\TCT\trunk
+cd D:\TIBCO_WORK\source\svn\BCCE

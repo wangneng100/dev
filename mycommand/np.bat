@@ -1,2 +1,2 @@
 @echo off
-start "" "C:\Program Files (x86)\Notepad++\notepad++.exe" %1
+"C:\Users\wangn\AppData\Local\Programs\Microsoft VS Code\bin\code" %1
