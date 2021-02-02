@@ -44,17 +44,8 @@ latest_email_id = int(id_list[-1])
 #print(latest_email_id)
 count = 0
 
-#龙头股
-mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
 
-#成长股
-#mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
-
-#中概股
-#mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
-
-
-days = raw_input('day range:(7)')
+days = raw_input('day range:(1)')
 if days=='':
     days = 1
 else:
@@ -62,7 +53,9 @@ else:
 
 string_input = raw_input('stock list:(space split)')
 if string_input=='':
-    mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL']    
+    mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
+    #mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
+    #mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
 else:
     mylist = string_input.split() #splits the input string on spaces
 
