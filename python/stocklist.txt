@@ -1,5 +1,8 @@
-mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL']
+#龙头股
+mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
 
-mylist = ['TDOC','DKNG','JFROG']
+#成长股
+mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
 
-mylist = ['TCEHY','BIDU','BABA','JD','BILI']
+#中概股
+mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']

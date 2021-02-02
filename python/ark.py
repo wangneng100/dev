@@ -39,20 +39,38 @@ data = con.search(None, 'ALL')
 mail_ids = data[1]
 id_list = mail_ids[0].split()   
 first_email_id = int(id_list[0])
-print first_email_id
+#print(first_email_id)
 latest_email_id = int(id_list[-1])
-print latest_email_id
+#print(latest_email_id)
 count = 0
 
-mylist = ['OPEN','ADBE','TDOC','DKNG','FSLY','SKLZ','TSLA','LMT','BLI','PLTR']
-#mylist = ['SRPT']
-days = 7
+#龙头股
+mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
+
+#成长股
+#mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
+
+#中概股
+#mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
+
+
+days = raw_input('day range:(7)')
+if days=='':
+    days = 1
+else:
+    days = int(days)
+
+string_input = raw_input('stock list:(space split)')
+if string_input=='':
+    mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL']    
+else:
+    mylist = string_input.split() #splits the input string on spaces
 
 mydictList = []
 for x in range(len(mylist)):
     mydictList.append(dict(name=mylist[x], buy=0,sell=0))
 
-print 'search ' + str(days) + ' days'
+print('search ' + str(days) + ' days')
 
 for i in range(latest_email_id,first_email_id,-1):
     count = count+1
@@ -76,4 +94,4 @@ for i in range(latest_email_id,first_email_id,-1):
                     mydictList[j]['sell'] +=1
 
 for dict in mydictList:
-    print dict['name'] + " Buy:" + str(dict['buy']) + " Sell:" + str(dict['sell'])
+    print(dict['name'] + " Buy:" + str(dict['buy']) + " Sell:" + str(dict['sell']))
