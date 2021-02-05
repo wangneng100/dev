@@ -42,53 +42,101 @@ first_email_id = int(id_list[0])
 #print(first_email_id)
 latest_email_id = int(id_list[-1])
 #print(latest_email_id)
-count = 0
 
+class stock():
+    def __init__(self, name):
+        self.name=name
+        self.buy = 0
+        self.sell = 0
 
-days = raw_input('day range:(1)')
-if days=='':
-    days = 1
-else:
-    days = int(days)
+mylist1 = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
+mylist2 = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
+mylist3 = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
 
-string_input = raw_input('stock list:(1-growing, 2-chinese, or list with space split)')
-if string_input=='':
-    mylist = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
+print "List1:" + str(mylist1)
+print "List2:"+ str(mylist2)
+print "List3:" + str(mylist3)
 
-elif string_input=="1":
-    mylist = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
-
-elif string_input=="2":
-    mylist = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
-else:
-    mylist = string_input.split() #splits the input string on spaces
-
+mailData = []
 mydictList = []
-for x in range(len(mylist)):
-    mydictList.append(dict(name=mylist[x], buy=0,sell=0))
+mylist = []
 
-print('search ' + str(days) + ' days')
+count = 0
+maxCount = 0
 
-for i in range(latest_email_id,first_email_id,-1):
-    count = count+1
-    if count > days:
-        break
-    data = con.fetch(str(i), '(RFC822)' )
-    for response_part in data:
-        arr = response_part[0]
-        if isinstance(arr, tuple):
-            msg = email.message_from_string(str(arr[1]))
-            email_subject = msg['subject']
-            email_from = msg['from']
-            content = msg.get_payload()
-            for j in range (0,len(mylist)):
-                # if mydictList[j] is None:
-                # print "SEARCH for" + mylist[j]
-                #     mydictList[j] = dict(name=mylist[j], buy=0,sell=0)
-                if content.find('Buy</td><td>'+mylist[j]) >-1:
-                    mydictList[j]['buy'] +=1
-                if content.find('Sell</td><td>'+mylist[j]) >-1:
-                    mydictList[j]['sell'] +=1
+keepgo = True
 
-for dict in mydictList:
-    print(dict['name'] + " Buy:" + str(dict['buy']) + " Sell:" + str(dict['sell']))
+while keepgo:
+    
+    count = 0
+    del mydictList[:]
+    del mylist[:]
+
+    days = raw_input('day range:(1)')
+    if days=='':
+        days = 1
+    else:
+        days = int(days)
+
+    string_input = raw_input('stock list:(1-bigone, 2-growing, 3-chinese, or list with space split)')
+    if string_input=='':
+        mylist = mylist1 + mylist2 + mylist3
+    elif string_input=='1':
+        mylist = mylist1
+    elif string_input=="2":
+        mylist = mylist2
+    elif string_input=="3":
+        mylist = mylist3
+    else:
+        mylist = string_input.split() #splits the input string on spaces
+
+    print "list len:" + str(len(mylist))
+
+    for x in range(len(mylist)):
+        mydictList.append(stock(mylist[x]))
+
+    print('search ' + str(days) + ' days')
+
+    if days > maxCount:
+        maxCount = days
+        mailData = [None]*maxCount
+        print "loading emails...." + str(len(mailData))
+        for i in range(latest_email_id,first_email_id,-1):
+            
+            count = count+1
+            if count > maxCount:
+                break
+            data_tmp = con.fetch(str(i), '(RFC822)' )
+            mailData[count-1] = data_tmp
+
+    for data in mailData:
+        print "search in emails...."
+        for response_part in data:
+            arr = response_part[0]
+            if isinstance(arr, tuple):
+                msg = email.message_from_string(str(arr[1]))
+                email_subject = msg['subject']
+                email_from = msg['from']
+                content = msg.get_payload()
+                for j in range (0,len(mylist)):
+                    # if mydictList[j] is None:
+                    # print "SEARCH for" + mylist[j]
+                    #     mydictList[j] = dict(name=mylist[j], buy=0,sell=0)
+                    # if content.find('Buy</td><td>'+mylist[j]) >-1:
+                    #     mydictList[j]['buy'] +=1
+                    # if content.find('Sell</td><td>'+mylist[j]) >-1:
+                    #     mydictList[j]['sell'] +=1
+                    if content.find('Buy</td><td>'+mylist[j]) >-1:
+                        mydictList[j].buy +=1
+                    if content.find('Sell</td><td>'+mylist[j]) >-1:
+                        mydictList[j].sell +=1
+
+    # for dict in mydictList:
+    #     print(dict['name'] + " Buy:" + str(dict['buy']) + " Sell:" + str(dict['sell']))
+    for stock_tmp in mydictList:
+        if stock_tmp.buy+stock_tmp.sell>0:
+            print(stock_tmp.name + " Buy:" + str(stock_tmp.buy) + " Sell:" + str(stock_tmp.sell))
+
+    quit = raw_input('Q for quit:')
+    if quit == 'q':
+        keepgo = False
