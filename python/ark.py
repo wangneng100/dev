@@ -56,6 +56,7 @@ mylist3 = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
 print "List1:" + str(mylist1)
 print "List2:"+ str(mylist2)
 print "List3:" + str(mylist3)
+print "List4:" + str(mylist3)
 
 mailData = []
 mydictList = []
@@ -108,6 +109,9 @@ while keepgo:
                 break
             data_tmp = con.fetch(str(i), '(RFC822)' )
             mailData[count-1] = data_tmp
+    else:
+        mailData = mailData[0:days]
+
 
     for data in mailData:
         print "search in emails...."
