@@ -120,9 +120,8 @@ while keepgo:
     else:
         mailData = mailData[0:days]
 
-
+    print "search in emails...."
     for data in mailData:
-        print "search in emails...."
         for response_part in data:
             arr = response_part[0]
             if isinstance(arr, tuple):
@@ -145,10 +144,17 @@ while keepgo:
 
     # for dict in mydictList:
     #     print(dict['name'] + " Buy:" + str(dict['buy']) + " Sell:" + str(dict['sell']))
+    
+    print "+++++++++++++++++++++++"
     for stock_tmp in mydictList:
-        if stock_tmp.buy+stock_tmp.sell>0:
-            print(stock_tmp.name + " Buy:" + str(stock_tmp.buy) + " Sell:" + str(stock_tmp.sell))
+        if stock_tmp.buy+stock_tmp.buy>0:
+            print(stock_tmp.name + " Buy:" + str(stock_tmp.buy))
 
+    print "-----------------------"
+    for stock_tmp in mydictList:
+        if stock_tmp.sell>0:
+            print(stock_tmp.name + " Sell:" + str(stock_tmp.sell))
+    print "======================="
     quit = raw_input('Q for quit:')
     if quit == 'q':
         keepgo = False
