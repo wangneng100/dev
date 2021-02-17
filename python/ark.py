@@ -1,8 +1,11 @@
 # Importing libraries 
 import imaplib, email 
-  
+
+f = open("stocklist.txt", "r")
+
 user = 'wangneng100@gmail.com'
-password = ''
+password = f.readline()
+
 imap_url = 'imap.gmail.com'
   
 # Function to get email content part i.e its body part 
@@ -49,14 +52,16 @@ class stock():
         self.buy = 0
         self.sell = 0
 
-mylist1 = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
-mylist2 = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR']
-mylist3 = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
+mylist1 = f.readline().split(",")
+mylist2 = f.readline().split(",")
+mylist3 = f.readline().split(",")
+# mylist1 = ['TSLA','AAPL','ADBE','NVDA','TSM','AMZN','MSFT','MA','V','GOOGL','PYPL','LMT']
+# mylist2 = ['TDOC','DKNG','JFROG','OPEN','SKLZ','FSLY','PLTR','EXPC','U','PCAR','ONEM']
+# mylist3 = ['TCEHY','BIDU','BABA','JD','BILI','DOYU']
 
 print "List1:" + str(mylist1)
 print "List2:"+ str(mylist2)
 print "List3:" + str(mylist3)
-print "List4:" + str(mylist3)
 
 mailData = []
 mydictList = []
@@ -83,11 +88,14 @@ while keepgo:
     if string_input=='':
         mylist = mylist1 + mylist2 + mylist3
     elif string_input=='1':
-        mylist = mylist1
+        print "list 1: longtou"
+        mylist = mylist1[:]
     elif string_input=="2":
-        mylist = mylist2
+        print "list 2: ark"
+        mylist = mylist2[:]
     elif string_input=="3":
-        mylist = mylist3
+        print "list 3: zhongguo"
+        mylist = mylist3[:]
     else:
         mylist = string_input.split() #splits the input string on spaces
 
