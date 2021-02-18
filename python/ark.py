@@ -137,9 +137,9 @@ while keepgo:
                     #     mydictList[j]['buy'] +=1
                     # if content.find('Sell</td><td>'+mylist[j]) >-1:
                     #     mydictList[j]['sell'] +=1
-                    if content.find('Buy</td><td>'+mylist[j]) >-1:
+                    if content.find('Buy</td><td>'+mylist[j]+"</td>") >-1:
                         mydictList[j].buy +=1
-                    if content.find('Sell</td><td>'+mylist[j]) >-1:
+                    if content.find('Sell</td><td>'+mylist[j]+"</td>") >-1:
                         mydictList[j].sell +=1
 
     # for dict in mydictList:
