@@ -1,7 +1,7 @@
 # Importing libraries 
 import imaplib, email 
 
-f = open("stocklist.txt", "r")
+f = open("password.txt", "r")
 
 user = 'wangneng100@gmail.com'
 password = f.readline()
@@ -52,6 +52,7 @@ class stock():
         self.buy = 0
         self.sell = 0
 
+f = open("stocklist.txt", "r")
 mylist1 = f.readline().split(",")
 mylist2 = f.readline().split(",")
 mylist3 = f.readline().split(",")
