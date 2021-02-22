@@ -107,19 +107,20 @@ while keepgo:
 
     print('search ' + str(days) + ' days')
 
+    
     if days > maxCount:
         maxCount = days
-        mailData = [None]*maxCount
-        print "loading emails...." + str(len(mailData))
+        mailDataLoaded = [None]*maxCount
+        print "loading emails...." + str(maxCount)
         for i in range(latest_email_id,first_email_id,-1):
             
             count = count+1
             if count > maxCount:
                 break
             data_tmp = con.fetch(str(i), '(RFC822)' )
-            mailData[count-1] = data_tmp
-    else:
-        mailData = mailData[0:days]
+            mailDataLoaded[count-1] = data_tmp
+
+    mailData = mailDataLoaded[0:days]
 
     print "search in emails...."
     for data in mailData:
@@ -138,9 +139,9 @@ while keepgo:
                     #     mydictList[j]['buy'] +=1
                     # if content.find('Sell</td><td>'+mylist[j]) >-1:
                     #     mydictList[j]['sell'] +=1
-                    if content.find('Buy</td><td>'+mylist[j]+"</td>") >-1:
+                    if content.find('Buy</td><td>'+mylist[j].upper()+"</td>") >-1:
                         mydictList[j].buy +=1
-                    if content.find('Sell</td><td>'+mylist[j]+"</td>") >-1:
+                    if content.find('Sell</td><td>'+mylist[j].upper()+"</td>") >-1:
                         mydictList[j].sell +=1
 
     # for dict in mydictList:
