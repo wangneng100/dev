@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 f = open("password.txt", "r")
 
-user = 'wangneng100@gmail.com'
+user = 'wangneng.usa@gmail.com'
 password = f.readline()
 
 imap_url = 'imap.gmail.com'
