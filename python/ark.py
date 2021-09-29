@@ -3,6 +3,7 @@
 
 # Importing libraries 
 import imaplib, email 
+from bs4 import BeautifulSoup
 
 f = open("password.txt", "r")
 
@@ -129,11 +130,14 @@ while keepgo:
     for data in mailData:
         for response_part in data:
             arr = response_part[0]
+            # print("arr: "+ str(arr))
             if isinstance(arr, tuple):
                 msg = email.message_from_string(str(arr[1]))
+                # print("msg: "+ str(msg))
                 email_subject = msg['subject']
                 email_from = msg['from']
                 content = msg.get_payload()
+                
                 for j in range (0,len(mylist)):
                     # if mydictList[j] is None:
                     # print "SEARCH for" + mylist[j]
@@ -142,13 +146,17 @@ while keepgo:
                     #     mydictList[j]['buy'] +=1
                     # if content.find('Sell</td><td>'+mylist[j]) >-1:
                     #     mydictList[j]['sell'] +=1
-                    if content.find('Buy</td><td>'+mylist[j].upper()+"</td>") >-1:
-                        mydictList[j].buy +=1
-                    if content.find('Sell</td><td>'+mylist[j].upper()+"</td>") >-1:
-                        mydictList[j].sell +=1
+                    
+                    soup = BeautifulSoup(content, 'html.parser')
 
-    # for dict in mydictList:
-    #     print(dict['name'] + " Buy:" + str(dict['buy']) + " Sell:" + str(dict['sell']))
+                    tds = soup.find_all("td",string=mylist[j].upper())
+                    
+                    for td in tds:
+                        if td.previous_sibling.previous_sibling:
+                            if td.previous_sibling.previous_sibling.string == "Buy":
+                                mydictList[j].buy +=1
+                            else:
+                                mydictList[j].sell +=1
     
     print "+++++++++++++++++++++++"
     for stock_tmp in mydictList:
