@@ -33,7 +33,7 @@ public class LongestSubString {
         return max;
     }
 	
-	public int lengthOfLongestSubstring1(String s) {
+    public static int lengthOfLongestSubstring1(String s) {
         
         Set<Character> subSet = new HashSet<Character>();
         
@@ -42,35 +42,31 @@ public class LongestSubString {
         int right = 0;
         
         while(right < s.length()){
-            char c1 = s.charAt(right++);
+            char c = s.charAt(right);
             
-            if(subSet.contains(c1)){
+            if(subSet.contains(c)){
                 max = Math.max(max, subSet.size());
                 subSet.clear();
-
-                while(s.charAt(left) != c1){
+                while(s.charAt(left) != c){
                     left++;
                 }
-                right = ++left;
+                left++;
+                right = left;
             } else {
-                subSet.add(c1);
-                max = Math.max(max, subSet.size());
+                subSet.add(c);
+                right++;
             }
+            
             
         }
         
-        return max;
+        return Math.max(max, subSet.size());
         
     }
 	
 	public static void main(String[] args) {
-		int[] chars = new int[128];
-		
-		System.out.println(chars[1]);
-		System.out.println((int)'a');
-		System.out.println((int)'z');
-		System.out.println((int)'A');
-		System.out.println((int)'Z');
+		String s = "abcbdfgabc";
+		System.out.println(lengthOfLongestSubstring1(s));
 	}
 
 }
