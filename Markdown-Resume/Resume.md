@@ -5,7 +5,7 @@
              <img src="assets/envelope-solid.svg" width="18px">
              wangneng100@gmail.com
          </span>
-		 <span></span>
+		     <span></span>
          <span>
              <img src="assets/phone-solid.svg" width="18px">
              8326709815
@@ -14,11 +14,11 @@
  </center>
 <br/>
  ## <img src="assets/info-circle-solid.svg" width="30px"> PROFESSIONAL SUMMARY 
-Software Architect with 10+ years experience on Enterprise Products,  About 6 years iPaaS Cloud experiences. Working on the world's most powerful integration platform TIBCO Cloud Integration(iPaaS) as Architect, In-depth knowledge of Data Refining and Integration products. Good experience with Amazon Web Services(Amazon S3,  EC2, RDS, EFS, Route53, EKS, Elasticsearch etc.)
+Software Architect with 10+ years experience on Enterprise Products,  6 years+ iPaaS Cloud experiences. Working on the world's most powerful integration platform TIBCO Cloud Integration(iPaaS) as Architect, In-depth knowledge of Data Refining and Integration products. Good experience with Amazon Web Services(Amazon S3,  EC2, RDS, EFS, Route53, EKS, Elasticsearch etc.)
 
 Responsible for product and software architecture, design and lead the implementation,  Delivered many integration products and currently work on TIBCO Clarity and TIBCO AuditSafe for more than 5 years.
 
-Specialties.
+Specialties:
  - System Architect, Design and Development. 
  - Data Refining, Elasticsearch, Integration Cloud, CICD
  - Microservices, Docker, Kubernetes, Helm, Fluentbit, AKS, EKS
@@ -30,7 +30,7 @@ Specialties.
 
 - **Architect | TIBCO Software Inc. | Stafford, TX**								May 2019 - Present
 
-  - Analysis Elasticsearch performance issue, redesign the indices schema and refactory the backend code. Improve the response speed for more than 30%.
+  - Analyze Elasticsearch performance issue, redesign the indices schema and refactory the backend code. Improve the response speed for more than 30%.
 
   - Provide technical expertise and leadership in the design, development, and delivery of TIBCO AuditSafe Enterprise Edition using Spring Boot, Docker, and Kubernetes technologies.
 
@@ -73,7 +73,7 @@ Specialties.
 - M.Eng. in Telecommunications Engineering	Dublin City University   09/2007 – 09/2008
 - B.Sc. in Software Engineering, 			           Wuhan University 		09/2002 – 07/2006
 <br/>
-## <img src="assets/briefcase-solid.svg" width="30px"> Aword
+## <img src="assets/briefcase-solid.svg" width="30px"> Award
 - 2015.2 Model Trainee of Pactera PMA program
 - 2013.1 Best Development Group of TIBCO CDC
 - 2012.1 Excellent staff of TIBCO CDC
