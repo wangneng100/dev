@@ -14,9 +14,9 @@
  </center>
 <br/>
  ## <img src="assets/info-circle-solid.svg" width="30px"> PROFESSIONAL SUMMARY 
-Software Architect with 10+ years experience on Enterprise Products,  6 years+ iPaaS Cloud experiences. Working on the world's most powerful integration platform TIBCO Cloud Integration(iPaaS) as Architect, In-depth knowledge of Data Refining and Integration products. Good experience with Amazon Web Services(Amazon S3,  EC2, RDS, EFS, Route53, EKS, Elasticsearch etc.)
+Software Architect with 10+ years experience on Enterprise Products,  5 years+ iPaaS Cloud experiences. Working on the world's most powerful integration platform TIBCO Cloud Integration as Architect, In-depth knowledge of Data Refining and Integration products. Good experience with Microservices Technologies(Docker, Kubernetes) and Amazon Web Services(Amazon S3,  EC2, RDS, EFS, Route53, EKS, Elasticsearch etc.)
 
-Responsible for product and software architecture, design and lead the implementation,  Delivered many integration products and currently work on TIBCO Clarity and TIBCO AuditSafe for more than 5 years.
+Responsible for product and software architecture, design and lead the implementation,  Delivered lots of integration products and currently work on TIBCO Clarity and TIBCO AuditSafe for more than 5 years.
 
 Specialties:
  - System Architect, Design and Development. 
@@ -26,9 +26,9 @@ Specialties:
 
 <br/>
 
-## <img src="assets/project-diagram-solid.svg" width="30px"> **EXPERIENCE**
+## <img src="assets/project-diagram-solid.svg" width="30px"> Work **EXPERIENCE**
 
-- **Architect | TIBCO Software Inc. | Stafford, TX**								May 2019 - Present
+- **Architect | TIBCO Software Inc. | Stafford, TX**								                                 May 2019 - Present
 
   - Analyze Elasticsearch performance issue, redesign the indices schema and refactory the backend code. Improve the response speed for more than 30%.
 
@@ -44,7 +44,7 @@ Specialties:
 
     
 
-- **Senior Software Engineer | Pactera NA Inc. | Stafford, TX**						Dec 2015 – May 2019
+- **Senior Software Engineer | Pactera NA Inc. | Stafford, TX**						                 Dec 2015 – May 2019
   
   - Design and implement TIBCO AuditSafe Cloud.
   
@@ -54,7 +54,7 @@ Specialties:
   
     
   
-- **Senior Software Engineer | Pactera Technology Limited | Beijing, China**		May 2011-- Dec 2015
+- **Senior Software Engineer | Pactera Technology Limited | Beijing, China**		         May 2011-- Dec 2015
   
   - Programming, Testing for TCT (Tibco Configuration Tool) with OSGI framework.
   
@@ -64,14 +64,15 @@ Specialties:
   
     
   
-- **Software Engineer | Taiji Computer Corporation Limited | Beijing, China**		Jul 2009 -- April 2011
+- **Software Engineer | Taiji Computer Corporation Limited | Beijing, China**		         Jul 2009 -- April 2011
+  
   - Demand analysis, Programming，Testing and Files management for Public Health Emergency Commanding and Decision-Making System of Yunnan Province.
   - Took part in 2010 Health Information Technology Conference in Xiamen and made on-site demonstration.
   <br/>
 ## <img src="assets/graduation-cap-solid.svg" width="30px"> Education
-- M.Eng. in Software Engineering, 			        Wuhan University 		 09/2006 – 07/2009
-- M.Eng. in Telecommunications Engineering	Dublin City University   09/2007 – 09/2008
-- B.Sc. in Software Engineering, 			           Wuhan University 		09/2002 – 07/2006
+- Master Degree in Software Engineering			            Wuhan University                 09/2006 – 07/2009
+- Master Degree in Telecommunications Engineering	  Dublin City University          09/2007 – 09/2008
+- Bachelor Degree in Software Engineering 			        Wuhan University 		       09/2002 – 07/2006
 <br/>
 ## <img src="assets/briefcase-solid.svg" width="30px"> Award
 - 2015.2 Model Trainee of Pactera PMA program
