@@ -14,15 +14,19 @@
  </center>
 <br/>
  ## <img src="assets/info-circle-solid.svg" width="30px"> PROFESSIONAL SUMMARY 
-Software Architect with 10+ years experience on Enterprise Products,  5 years+ iPaaS Cloud experiences. Working on the world's most powerful integration platform TIBCO Cloud Integration as Architect, In-depth knowledge of Data Refining and Integration products. Good experience with Microservices Technologies(Docker, Kubernetes) and Amazon Web Services(Amazon S3,  EC2, RDS, EFS, Route53, EKS, Elasticsearch etc.)
+Software Architect/Principle Engineer with 10+ years experience on Enterprise Software. Proficient in system design, data integration, and cloud SaaS/PaaS software development. In-depth knowledge of Data Cleansing, Refining and Integration products. Good experience with Microservices Technologies and Amazon Web Services.
 
-Responsible for product and software architecture, design and lead the implementation,  Delivered lots of integration products and currently work on TIBCO Clarity and TIBCO AuditSafe for more than 5 years.
+Responsible for product and software architecture, design and lead the implementation. Remains engaged, proactive and positive in tough circumstances, owning assignments and taking full accountability for overall team success.
 
 Specialties:
- - System Architect, Design and Development. 
- - Data Refining, Elasticsearch, Integration Cloud, CICD
- - Microservices, Docker, Kubernetes, Helm, Fluentbit, AKS, EKS
- - Java, Python, REST API's, OAuth2
+ - System Architect, Design and Development. Agile software development
+ - Data Cleansing/Refining, Integration Cloud, iPaaS, CICD
+ - Elasticsearch, MySQL, PostgreSQL
+ - Docker, Kubernetes, Helm, Linkerd, Fluentbit, AKS, EKS, GEK
+ - Java, Python, Gradle, Maven, Ant
+ - Spring Boot, REST API's, OAuth2
+ - JIRA, Confluence, Jenkins, Teamcity
+ - AWS((Amazon S3,  EC2, RDS, EFS, Route53, EKS, Elasticsearch etc.)
 
 <br/>
 
