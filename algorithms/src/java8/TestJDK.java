@@ -10,8 +10,13 @@ public class TestJDK {
 		
 		strList.stream().filter(x -> x.endsWith("a")).count();
 		
-		System.out.println();
-		
+		System.out.println(strList);
+		System.out.println(Constant.ROAD);
 	}
 
+}
+
+interface Constant{
+	int WALL = 0;
+	int ROAD = 1;
 }
