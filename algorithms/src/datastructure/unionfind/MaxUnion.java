@@ -43,7 +43,7 @@ public class MaxUnion {
 
 		int max = 0;
 		int max_father = -1;
-		for (Map.Entry entry : uf.root2size.entrySet()) {
+		for (Map.Entry<Integer,Integer> entry : uf.root2size.entrySet()) {
 			if ((int) entry.getValue() > max) {
 				max = (int) entry.getValue();
 				max_father = (int) entry.getKey();
