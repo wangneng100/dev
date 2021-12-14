@@ -1,5 +1,8 @@
 package tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FlatternTree {
     /**
      * @param root: a TreeNode, the root of the binary tree
