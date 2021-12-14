@@ -3,6 +3,7 @@ package bfs;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+//求岛屿总数
 public class IslandNum2 {
     static final int[] DELTA_X = {-1, 1, 0, 0};
     static final int[] DELTA_Y = {0, 0, -1, 1};

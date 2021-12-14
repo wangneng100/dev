@@ -4,6 +4,7 @@ public class ListNode {
 
 	int val;
 	ListNode next;
+	ListNode prev;
 
 	ListNode() {
 	}
@@ -16,5 +17,12 @@ public class ListNode {
 		this.val = val;
 		this.next = next;
 	}
+	
+	ListNode(int val, ListNode next, ListNode prev) {
+		this.val = val;
+		this.next = next;
+		this.prev = prev;
+	}
+
 
 }
