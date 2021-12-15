@@ -1,0 +1,48 @@
+前序遍历的递归解法
+使用helper(root, res)
+0.root为空，直接返回
+1.root非空，加入结果集
+2.递归root.left
+3.递归root.right
+
+前序遍历的非递归解法
+0.root为空，直接返回res
+1.root进栈 Deque or Stack
+2.while loop栈非空
+3.root出栈，add到结果集
+4.root.right非空进栈
+5.root.left非空进栈
+
+中序遍历的递归解法
+使用helper(root, res)
+0.root为空，直接返回
+1.递归root.left
+2.root加入结果集
+3.递归root.right
+
+中序遍历的非递归解法
+1. while loop -- 从根节点一直到没有左子树
+   while (root != null) {
+        stack.push(root);
+        root = root.left;
+    }
+2. while loop栈非空
+    a. pop节点，加入结果集
+    b. 如果有有右节点，根节点设置为右节点，执行1
+
+
+后序遍历递归解法
+使用helper(root, res)
+0.root为空，直接返回
+1.递归root.left
+2.递归root.right
+3.root非空，加入结果集
+
+后序遍历递归解法
+1. 使用LinkedList存储结果
+2. root为空，直接返回res
+3. root进栈 Deque or Stack
+4. while loop 栈非空
+    a. 栈pop，结果存入linkedlist最前面addFirst();
+    b. left非空进栈
+    c. right非空进栈
