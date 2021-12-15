@@ -1,4 +1,4 @@
-package google;
+package companys.google;
 
 public class MultiplyStrings {
 	public static String multiply1(String num1, String num2) {

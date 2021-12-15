@@ -1,4 +1,4 @@
-package google;
+package companys.google;
 
 public class LicenseKeyFormatting {
 	public String licenseKeyFormatting(String s, int k) {

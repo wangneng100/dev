@@ -1,4 +1,4 @@
-package wayfair;
+package companys.wayfair;
 
 import java.util.ArrayList;
 import java.util.Arrays;

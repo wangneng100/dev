@@ -4,14 +4,14 @@ import java.util.Stack;
 
 import tree.TreeNode;
 
-public class  {
+public class BSTIteratorOptimal{
     Stack<TreeNode> stack = new Stack<>();
     /**
     * @param root: The root of binary tree.
     */
     public BSTIteratorOptimal(TreeNode root) {
         // do intialization if necessary
-        findLeftLast(root);
+        findMostLeft(root);
 
     }
 

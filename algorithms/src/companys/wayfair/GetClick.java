@@ -1,4 +1,4 @@
-package wayfair;
+package companys.wayfair;
 
 import java.util.HashMap;
 import java.util.HashSet;
