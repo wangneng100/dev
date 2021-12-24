@@ -1,4 +1,4 @@
-package integer;
+package stringandnum;
 
 public class LongestPalindromeProduct {
 	

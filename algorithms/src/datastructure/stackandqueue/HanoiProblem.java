@@ -1,4 +1,4 @@
-package stackandarray;
+package datastructure.stackandqueue;
 
 import java.util.Stack;
 

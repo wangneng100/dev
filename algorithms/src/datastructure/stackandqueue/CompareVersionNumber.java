@@ -1,4 +1,4 @@
-package stackandarray;
+package datastructure.stackandqueue;
 
 public class CompareVersionNumber {
 	

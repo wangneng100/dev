@@ -1,4 +1,4 @@
-package stringandarray;
+package stringandnum;
 
 public class LongestNoneRepeatSubString {
 	

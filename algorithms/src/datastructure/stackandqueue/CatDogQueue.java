@@ -1,4 +1,4 @@
-package stackandarray;
+package datastructure.stackandqueue;
 
 import java.util.LinkedList;
 import java.util.Queue;
