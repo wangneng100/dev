@@ -120,11 +120,13 @@ public class LowestCommonAncestor {
         return res;
 
     }
+
+    class Result{
+        boolean isAExist;
+        boolean isBExist;
+        TreeNode lca;
+    }
     
 }
 
-class Result{
-    boolean isAExist;
-    boolean isBExist;
-    TreeNode lca;
-}
+

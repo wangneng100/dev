@@ -26,18 +26,20 @@ public class MaximumPathSum {
 
         return new Result(singlePath, max);
     }
-}
 
-
-class Result{
-    // singlePath means the max path from node to other child
-    int singlePath;
-
-    // maxPath means max path 
-    int maxPath;
-
-    public Result(int single, int max){
-        singlePath = single;
-        maxPath = max;
+    class Result{
+        // singlePath means the max path from node to other child
+        int singlePath;
+    
+        // maxPath means max path 
+        int maxPath;
+    
+        public Result(int single, int max){
+            singlePath = single;
+            maxPath = max;
+        }
     }
 }
+
+
+
