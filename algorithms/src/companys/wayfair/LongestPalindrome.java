@@ -1,36 +1,11 @@
 package companys.wayfair;
 
-/*
-// Basic Test
-assertIsPalindrome("", false);
-assertIsPalindrome("lotion", false);
-assertIsPalindrome("racecar", true);
- 
-// Case and space tests
-assertIsPalindrome("Racecar", true);
-assertIsPalindrome("Step on no pets", true);
-assertIsPalindrome("No lemon no melons", false);
- 
-// Special character tests
-assertIsPalindrome("Eva - can I see bees in a cave?", true);
-assertIsPalindrome("A man, a plan, a canal: Panama!", true);
-
-
-assertGetLongestPalindromes("Aaaaa", ["Aaaaa"]);
-assertGetLongestPalindromes("A racecar", ["racecar"]);
-assertGetLongestPalindromes("No lemon no melons", ["No lemon no melon"]);
-assertGetLongestPalindromes("", []);
-assertGetLongestPalindromes("Racecars racing", ["Racecar", "cars rac"]);
-assertGetLongestPalindromes("abcAb", ["a", "b", "c", "A"]);
-
-*/
-
-
-// you can also use imports, for example:
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class LongestPalindrome {
-    public String longestPalindrome(String s) {
+	public String longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
             return "";
         }
@@ -187,9 +162,9 @@ public class LongestPalindrome {
     }
 
     public List<String> getLongestPalindrome(String s) {
-        // sanity check
         int len = s.length();
-        int maxPLen = 1; //这里存的是回文的长度
+        // max palindrome length
+        int maxPLen = 1; 
         List <String> res = new ArrayList <>();
 
         if(len < 2) {
@@ -197,17 +172,33 @@ public class LongestPalindrome {
             return res;
         }
 
-        for (int i = 1; i < len - 1; i++) {
+        int left = 0;
+        while(left < len) {
+        	while(left < len && !Character.isLetterOrDigit(s.charAt(left))) {
+        		left++;
+        	}
             //handle odd palindrome
-            Result r = expand(s, i, i);
+            Result r = expand(s, left, left);
             maxPLen =  processResult(s, r, maxPLen, res);
             
+            if(left == len - 1) break;
+            int right = left + 1;
+            while(right < len && !Character.isLetterOrDigit(s.charAt(right))) {
+            	right++;
+        	}
             //handle even palindrome
-            r = expand(s, i, i + 1);
+            r = expand(s, left, right);
             maxPLen =  processResult(s, r, maxPLen, res);
             
-
+            left = right;
         }
+        // for(int i = 0; i < len - 1; i++) {
+        //     Result r = expand(s, i, i);
+        //     maxPLen =  processResult(s, r, maxPLen, res);
+            
+        //     r = expand(s, i, i + 1);
+        //     maxPLen =  processResult(s, r, maxPLen, res);
+        // }
         return res;
     }
 
@@ -227,63 +218,42 @@ public class LongestPalindrome {
 
     private Result expand(String s, int left, int right) {
         int palindromeLen = 0;
+
         while (left >= 0 && right <= s.length() - 1) {
-
-            if(left == 0 || right == s.length() - 1){
-                //both valid but not equal
-                if(Character.isLetterOrDigit(s.charAt(left)) && Character.isLetterOrDigit(s.charAt(right))
-                    && Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
-                        break;
-                }
-                
-                // one of them is valid
-                if(Character.isLetterOrDigit(s.charAt(left)) != Character.isLetterOrDigit(s.charAt(right))) {
-                    break;
-                }
-
-                //both valid and equal or both invalid, palindromeLen +2
-                palindromeLen += 2;
-                if(right < s.length() - 1) {
-                    while(right <= s.length() - 1 && !Character.isLetterOrDigit(s.charAt(++right))) {
-                        palindromeLen++;
-                    }
-                    
-                    right--;
-                    
-                } else if(left > 0) {
-                    while(left >= 0 && !Character.isLetterOrDigit(s.charAt(--left))) {
-                        palindromeLen++;
-                    }
-                    
-                    left++;
-                    
-                }
-                
-                break;
-            }
-
             if (Character.toLowerCase(s.charAt(left)) == Character.toLowerCase(s.charAt(right))) {
                 palindromeLen = left == right? 1 : palindromeLen + 2;
-                if(left > 0) 
-                    left--;
-                if(right < s.length() - 1)
-                    right++;
+                left--;
+                right++;
             } else if (!Character.isLetterOrDigit(s.charAt(left))) {
-                palindromeLen++;
-                if(left > 0)
-                    left--;
+                left--;
             } else if (!Character.isLetterOrDigit(s.charAt(right))) {
-                palindromeLen++;
-                if(right < s.length() - 1)
-                    right++;
-                
+                right++;
             } else {
                 break;
             }
         }
-        left = left < 0? 0: left;
-        right = right > s.length() - 1 ? s.length()-1 : right;
-        return new Result(left, right, palindromeLen);
+        
+        if(left == -1 && right <= s.length() - 1){
+            //both valid but not equal
+        	if(Character.toLowerCase(s.charAt(left+1)) == Character.toLowerCase(s.charAt(right -1))
+        			||!Character.isLetterOrDigit(s.charAt(left + 1)) && !Character.isLetterOrDigit(s.charAt(right - 1))) {
+        		while(right <= s.length() - 1 && !Character.isLetterOrDigit(s.charAt(right))) {
+        			right++;
+        		}
+        	}
+        }
+        
+        if(right == s.length() && left >= 0){
+            //both valid but not equal
+        	if(Character.toLowerCase(s.charAt(left+1)) == Character.toLowerCase(s.charAt(right -1))
+        			||!Character.isLetterOrDigit(s.charAt(left + 1)) && !Character.isLetterOrDigit(s.charAt(right - 1))) {
+        		while(left >=0 && !Character.isLetterOrDigit(s.charAt(left))) {
+        			left--;
+        		}
+        	}
+        }
+        
+        return new Result(left + 1, right - 1, palindromeLen);
     }
 
 
@@ -306,14 +276,15 @@ public class LongestPalindrome {
 // assertGetLongestPalindromes("abcAb", ["a", "b", "c", "A"]);
         LongestPalindrome solution = new LongestPalindrome();
 
-        String s = "Racecars racing";
-        // String s = "abb!!ad";
-        // String s = "No lemon no melons";
+//        String s = "Racecars racing";
+//        String s = "abb!!ad";
+       String s ="!!abba?cddc";
+        // String s = "!!aa!cd?aa?";
+//        String s = "a";
+//        String s = "No lemon no melons";
         // List<String> ret = solution.getLongestPalindrome("No lemon no melons");
-        List<String> ret = solution.getLongestPalindrome(s);
-        for (String string : ret) {
-            System.out.println(string);
-        }
+        List<String> res = solution.getLongestPalindrome(s);
+        System.out.println(res);
 
 
         System.out.println("This is a debug message");
@@ -331,4 +302,3 @@ class Result{
         this.palindromeLen = palindromeLen;
     }
 }
-
