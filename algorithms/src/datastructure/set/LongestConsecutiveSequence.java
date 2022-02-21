@@ -1,5 +1,6 @@
 package datastructure.set;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,5 +28,29 @@ public class LongestConsecutiveSequence {
         }
 
         return longestStreak;
+    }
+
+    public int longestConsecutive2(int[] nums) {
+        if(nums.length == 0) {
+            return 0;
+        }
+        
+        int max = 1;
+        Arrays.sort(nums);
+        int count = 1;
+        
+        for(int i = 0; i < nums.length - 1; i++) {
+            if(nums[i] == nums[i + 1] - 1) {
+                count++;
+            }else if(nums[i] != nums[i+1]) {
+                // System.out.println("i:" + i + " count" + count);
+                max = Math.max(max, count);
+                count = 1; 
+            }
+        }
+        
+        max = Math.max(max, count);
+        
+        return max;
     }
 }
