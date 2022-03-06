@@ -1,4 +1,7 @@
 package twopointers.opposite;
+
+import java.util.Arrays;
+
 //https://www.lintcode.com/problem/609
 public class TwoSumLessThanOrEqual {
     public int twoSum5(int[] nums, int target) {
